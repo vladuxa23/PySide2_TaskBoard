@@ -12,7 +12,9 @@ class NewTask(QtWidgets.QWidget):
         self.ui = Ui_NewTaskForm()
         self.ui.setupUi(self)
 
-        self.task_name = {'Сделать': 'Do', 'В процессе': 'Doing', 'Выполнено': 'Done'}
+        self.task_name = {'Сделать': 'WidgetDo',
+                          'В процессе': 'WidgetDoing',
+                          'Выполнено': 'WidgetDone'}
 
         self.ui.comboBoxCategory.addItems(self.task_name.keys())
         self.ui.comboBoxDoer.addItems(['Vasya', 'Petya', 'Vanya'])
@@ -25,7 +27,7 @@ class NewTask(QtWidgets.QWidget):
              'doer': self.ui.comboBoxDoer.currentText(),
              'task_name': self.ui.lineEditTaskName.text(),
              'description': self.ui.plainTextEditDescription.toPlainText(),
-             'date_end': self.ui.dateEditEnd.date()})
+             'date_end': self.ui.dateEditEnd.date().toString()})
         self.close()
 
 
