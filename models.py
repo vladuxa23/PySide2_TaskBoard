@@ -14,6 +14,14 @@ class Tasks(Base):
     date_end = Column(String)
 
 
+class Users(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True)
+    user_name = Column(String)
+    user_role = Column(Integer)
+    password = Column(String)
+
+
 engine = create_engine("sqlite+pysqlite:///tasks.db", echo=True, future=True)
 engine.connect()
 
