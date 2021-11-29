@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'NewTask_design.ui'
+## Form generated from reading UI file 'window_design_new_task.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##

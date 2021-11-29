@@ -42,6 +42,7 @@ class TaskWidget(QtWidgets.QFrame):
         self.labelDoer = QtWidgets.QLabel(f"Исполнитель: {self.doer}")
         self.labelDescription = QtWidgets.QLabel(f"Описание:")
         self.textEditDescription = QtWidgets.QPlainTextEdit(self.description)
+        self.textEditDescription.setReadOnly(True)
         self.labelDateEnd = QtWidgets.QLabel(f"Выполнить до:\n{self.date_end}")
 
         layout.addWidget(self.labelName)

@@ -1,7 +1,7 @@
 import sys
 from PySide2 import QtCore, QtWidgets, QtGui
 
-from ui.NewTask_design import Ui_NewTaskForm
+from ui.window_design_new_task import Ui_NewTaskForm
 
 
 class NewTask(QtWidgets.QWidget):
@@ -22,12 +22,12 @@ class NewTask(QtWidgets.QWidget):
         self.ui.pushButton.clicked.connect(self.send_data)
 
     def send_data(self):
-        self.send_new_task_data.emit(
-            {'category': self.task_name[self.ui.comboBoxCategory.currentText()],
-             'doer': self.ui.comboBoxDoer.currentText(),
-             'task_name': self.ui.lineEditTaskName.text(),
-             'description': self.ui.plainTextEditDescription.toPlainText(),
-             'date_end': self.ui.dateEditEnd.date().toString()})
+        data = {'category': self.task_name[self.ui.comboBoxCategory.currentText()],
+                'doer': self.ui.comboBoxDoer.currentText(),
+                'task_name': self.ui.lineEditTaskName.text(),
+                'description': self.ui.plainTextEditDescription.toPlainText(),
+                'date_end': self.ui.dateEditEnd.date().toString()}
+        self.send_new_task_data.emit(data)
         self.close()
 
 
